@@ -1,3 +1,4 @@
+import 'package:doc_app/core/routing/routes.dart';
 import 'package:doc_app/core/theming/colors.dart';
 import 'package:doc_app/core/theming/text_styles.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +10,9 @@ class GetStartedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () {},
+      onPressed: () {
+        Navigator.of(context).pushNamed(Routes.loginScreen);
+      },
       style: ButtonStyle(
         backgroundColor: WidgetStatePropertyAll(ColorsManager.mainBlue),
         minimumSize: WidgetStatePropertyAll(Size(double.infinity, 52.h)),
