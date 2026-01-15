@@ -14,6 +14,12 @@ class FontWeights {
 }
 
 class TextStyles {
+  static TextStyle font13BlackRegular = TextStyle(
+    fontSize: 13.sp,
+    fontWeight: FontWeights.regular,
+    color: ColorsManager.black,
+  );
+
   static TextStyle font26BlackBold = TextStyle(
     fontSize: 26.sp,
     fontWeight: FontWeights.bold,
@@ -32,14 +38,26 @@ class TextStyles {
     color: ColorsManager.mainBlue,
   );
 
+  static TextStyle font13BlueRegular = TextStyle(
+    fontSize: 13.sp,
+    fontWeight: FontWeights.regular,
+    color: ColorsManager.mainBlue,
+  );
+
   static TextStyle font12GreyRegular = TextStyle(
     fontSize: 12.sp,
     fontWeight: FontWeights.regular,
     color: ColorsManager.grey,
   );
 
-  static TextStyle font14GreyRegular = TextStyle(
-    fontSize: 14.sp,
+  static TextStyle font13Grey60Regular = TextStyle(
+    fontSize: 13.sp,
+    fontWeight: FontWeights.regular,
+    color: ColorsManager.grey60,
+  );
+
+  static TextStyle font15GreyRegular = TextStyle(
+    fontSize: 15.sp,
     fontWeight: FontWeights.regular,
     color: ColorsManager.grey,
   );
