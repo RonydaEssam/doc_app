@@ -4,22 +4,30 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppTextFormField extends StatelessWidget {
+  final String hintText;
+  final bool? isObsecureText;
+  final Widget? suffixIcon;
+  final TextEditingController? controller;
+  final Function(String?) validator;
+
   const AppTextFormField({
     super.key,
     required this.hintText,
     this.isObsecureText,
     this.suffixIcon,
+    this.controller,
+    required this.validator,
   });
-
-  final String hintText;
-  final bool? isObsecureText;
-  final Widget? suffixIcon;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       obscureText: isObsecureText ?? false,
       style: TextStyles.font14DarkGreyMedium,
+      validator: (value) {
+        return validator(value);
+      },
       decoration: InputDecoration(
         isDense: true,
         contentPadding: REdgeInsets.symmetric(horizontal: 20.w, vertical: 18.h),
@@ -44,6 +52,13 @@ class AppTextFormField extends StatelessWidget {
           borderRadius: BorderRadius.circular(16.r),
         ),
         errorBorder: OutlineInputBorder(
+          borderSide: const BorderSide(
+            color: ColorsManager.red,
+            width: 1.2,
+          ),
+          borderRadius: BorderRadius.circular(16.r),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
           borderSide: const BorderSide(
             color: ColorsManager.red,
             width: 1.2,
