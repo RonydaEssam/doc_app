@@ -38,6 +38,12 @@ class TextStyles {
     color: ColorsManager.mainBlue,
   );
 
+  static TextStyle font16BlueSemiBold = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeights.semiBold,
+    color: ColorsManager.mainBlue,
+  );
+
   static TextStyle font13BlueRegular = TextStyle(
     fontSize: 13.sp,
     fontWeight: FontWeights.regular,
