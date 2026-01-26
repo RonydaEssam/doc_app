@@ -1,9 +1,7 @@
-import 'package:doc_app/core/helpers/app_regex.dart';
 import 'package:doc_app/core/helpers/spacing.dart';
 import 'package:doc_app/core/theming/colors.dart';
 import 'package:doc_app/core/widgets/app_text_form_field.dart';
 import 'package:doc_app/features/login/logic/cubit/login_cubit.dart';
-import 'package:doc_app/features/sign_up/ui/widgets/password_validations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -97,6 +95,7 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
             ),
           ),
           verticalSpacing(24),
+          /*
           PasswordValidations(
             hasLowerCase: hasLowerCase,
             hasUpperCase: hasUpperCase,
@@ -104,6 +103,7 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
             hasNumber: hasNumber,
             hasMinLength: hasMinLength,
           ),
+          */
         ],
       ),
     );
