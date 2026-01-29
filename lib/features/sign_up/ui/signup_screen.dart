@@ -58,6 +58,7 @@ class SignupScreen extends StatelessWidget {
                 const SignupTermsAndConditionsText(),
                 verticalSpacing(48),
                 const HaveAccountLoginText(),
+                const SignupBlocListener(),
               ],
             ),
           ),
