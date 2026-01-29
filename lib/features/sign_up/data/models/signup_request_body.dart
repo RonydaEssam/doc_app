@@ -9,7 +9,7 @@ class SignupRequestBody {
   final String email;
   @JsonKey(name: 'phone')
   final String phoneNumber;
-  final String gender;
+  final int gender;
   final String password;
   @JsonKey(name: 'password_confirmation')
   final String passwordConfirmation;

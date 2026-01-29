@@ -1,7 +1,6 @@
 import 'package:doc_app/core/helpers/spacing.dart';
 import 'package:doc_app/core/theming/text_styles.dart';
 import 'package:doc_app/core/widgets/app_text_button.dart';
-import 'package:doc_app/features/sign_up/data/models/signup_request_body.dart';
 import 'package:doc_app/features/sign_up/logic/cubit/signup_cubit.dart';
 import 'package:doc_app/features/sign_up/ui/widgets/form_fields.dart';
 import 'package:doc_app/features/sign_up/ui/widgets/have_account_login_text.dart';
@@ -18,7 +17,7 @@ class SignupScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     void validateThenSignup(BuildContext context) {
       if (context.read<SignupCubit>().formKey.currentState!.validate()) {
-        context.read<SignupCubit>().emitSignupStates;
+        context.read<SignupCubit>().emitSignupStates();
       }
     }
 

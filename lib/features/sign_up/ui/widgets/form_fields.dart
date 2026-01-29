@@ -16,6 +16,7 @@ class FormFields extends StatefulWidget {
 
 class _FormFieldsState extends State<FormFields> {
   bool isObsecureText = true;
+  bool isObsecureTextConfirmation = true;
 
   late TextEditingController passwordController;
 
@@ -127,6 +128,39 @@ class _FormFieldsState extends State<FormFields> {
             hasSpecialCharacters: hasSpecialCharacters,
             hasNumber: hasNumber,
             hasMinLength: hasMinLength,
+          ),
+          verticalSpacing(16),
+          AppTextFormField(
+            hintText: 'Password Confirmation',
+            controller: context
+                .read<SignupCubit>()
+                .passwordConfirmationController,
+            validator: (value) {
+              if (value == null ||
+                  value.isEmpty ||
+                  passwordController.text !=
+                      context
+                          .read<SignupCubit>()
+                          .passwordConfirmationController
+                          .text) {
+                return 'Please confirm your password.';
+              }
+            },
+            isObsecureText: isObsecureTextConfirmation,
+            suffixIcon: GestureDetector(
+              onTap: () {
+                setState(() {
+                  isObsecureTextConfirmation = !isObsecureTextConfirmation;
+                });
+              },
+              child: Icon(
+                isObsecureTextConfirmation == true
+                    ? Icons.visibility_off
+                    : Icons.visibility,
+                size: 18,
+                color: ColorsManager.mainBlue,
+              ),
+            ),
           ),
         ],
       ),

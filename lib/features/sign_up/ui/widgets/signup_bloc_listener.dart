@@ -5,6 +5,7 @@ import 'package:doc_app/features/sign_up/logic/cubit/signup_cubit.dart';
 import 'package:doc_app/features/sign_up/logic/cubit/signup_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignupBlocListener extends StatelessWidget {
   const SignupBlocListener({super.key});
@@ -20,10 +21,13 @@ class SignupBlocListener extends StatelessWidget {
           content: SingleChildScrollView(
             child: ListBody(
               children: [
-                Text(
-                  'Congratulations!\nYou Have Signed Up Successfully.',
-                  textAlign: TextAlign.center,
-                  style: TextStyles.font14DarkGreyMedium,
+                Padding(
+                  padding: EdgeInsetsGeometry.only(top: 8.h),
+                  child: Text(
+                    'Congratulations!\nYou Have Signed Up Successfully.',
+                    textAlign: TextAlign.center,
+                    style: TextStyles.font14DarkGreyMedium,
+                  ),
                 ),
               ],
             ),
@@ -32,7 +36,7 @@ class SignupBlocListener extends StatelessWidget {
             Center(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context).pushReplacementNamed(Routes.homeScreen);
+                  Navigator.of(context).pushNamed(Routes.loginScreen);
                 },
                 child: Text(
                   'Continue',
