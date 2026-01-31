@@ -60,6 +60,7 @@ dependencies:
   flutter_screenutil: ^5.9.3
   # for dart code generation and modular compilation
   build_runner: ^2.10.5
+  firebase_core: ^4.4.0
   
   
 
